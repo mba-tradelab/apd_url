@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{abdallah}
+Tarek~Amr Abdallah and Beatriz De~La~Iglesia.
+\newblock Url-based web page classification: A new method for url-based web
+  page classification using n-gram language models.
+\newblock {\em KDIR 2014 - Proceedings of the International Conference on
+  Knowledge Discovery and Information Retrieval}, 2014.
+
+\bibitem{morichetta}
+Andrea~Morichetta et~al.
+\newblock Clue: Clustering for mining web urls.
+\newblock {\em Politecnico de Milano}, 2016.
+
+\bibitem{lei}
+Tao~Lei et~al.
+\newblock A pattern tree-based approach to learning url normalization rules.
+\newblock {\em Proceedings of the 19th International Conference on World Wide
+  Web, WWW '10}, 2010.
+
+\end{thebibliography}

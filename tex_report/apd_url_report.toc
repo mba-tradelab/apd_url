@@ -1,6 +1,16 @@
 \babel@toc {french}{}
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}% 
-\contentsline {section}{\numberline {2}Analyse de la structure des URL et premiers essais de segmentation automatique}{1}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Structure classique d'une URL}{1}{subsection.2.1}% 
-\contentsline {section}{\numberline {3}Approche s\IeC {\'e}mantique de l'analyse des URL et segmentation automatique par la m\IeC {\'e}thode des \textit {n}-grams}{2}{section.3}% 
-\contentsline {section}{References}{2}{section.3}% 
+\contentsline {section}{\numberline {2}Segmentation d'URL}{1}{section.2}% 
+\contentsline {section}{\numberline {3}Analyse de la structure des URL et premiers essais de segmentation automatique via \textit {pattern trees}}{1}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Structure classique d'une URL}{1}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Analyse de la structure des URLs via \textit {pattern trees}}{2}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}R\IeC {\'e}sultats de transformations d'URL et orientation vers une autre m\IeC {\'e}thode}{2}{subsection.3.3}% 
+\contentsline {section}{\numberline {4}Approche statistique de la classification automatique d'URL}{3}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Distance et similarit\IeC {\'e}}{3}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}DBSCAN et segmentation}{4}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}R\IeC {\'e}sultats et limitations de la m\IeC {\'e}thode}{4}{subsection.4.3}% 
+\contentsline {section}{\numberline {5}Approche s\IeC {\'e}mantique de l'analyse des URL et segmentation automatique par la m\IeC {\'e}thode des \textit {n}-grammes}{5}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Le mod\IeC {\`e}le $n$-grammes}{5}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Construction du mod\IeC {\`e}le $n$-grammes \IeC {\`a} partir des donn\IeC {\'e}es d'URL disponibles}{6}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {5.3}R\IeC {\'e}sultats de segmentation d'URL}{6}{subsection.5.3}% 
+\contentsline {section}{References}{7}{subsection.5.3}% 
