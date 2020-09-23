@@ -7,9 +7,10 @@
 \BOOKMARK [1][-]{section.4}{Approche statistique de la classification automatique d'URL}{}% 7
 \BOOKMARK [2][-]{subsection.4.1}{Distance et similarit\351}{section.4}% 8
 \BOOKMARK [2][-]{subsection.4.2}{DBSCAN et segmentation}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.3}{R\351sultats et limitations de la m\351thode}{section.4}% 10
-\BOOKMARK [1][-]{section.5}{Approche s\351mantique de l'analyse des URL et segmentation automatique par la m\351thode des n-grammes}{}% 11
-\BOOKMARK [2][-]{subsection.5.1}{Le mod\350le n-grammes}{section.5}% 12
-\BOOKMARK [2][-]{subsection.5.2}{Construction du mod\350le n-grammes \340 partir des donn\351es d'URL disponibles}{section.5}% 13
-\BOOKMARK [2][-]{subsection.5.3}{R\351sultats de segmentation d'URL}{section.5}% 14
-\BOOKMARK [1][-]{subsection.5.3}{References}{}% 15
+\BOOKMARK [2][-]{subsection.4.3}{R\351sultats de clustering}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.4}{Limites de la m\351thode}{section.4}% 11
+\BOOKMARK [1][-]{section.5}{Approche s\351mantique de l'analyse des URL et segmentation automatique par la m\351thode des n-grammes}{}% 12
+\BOOKMARK [2][-]{subsection.5.1}{Le mod\350le n-grammes}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.2}{Construction du mod\350le n-grammes \340 partir des donn\351es d'URL disponibles}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.3}{R\351sultats de segmentation d'URL}{section.5}% 15
+\BOOKMARK [1][-]{subsection.5.3}{References}{}% 16

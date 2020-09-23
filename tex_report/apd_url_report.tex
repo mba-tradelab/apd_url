@@ -128,20 +128,34 @@ Une fois la distance entre chaque objet mesurée, il faut constituer automatique
 
 Tout ce processus de construction de groupes porte en apprentissage statistique le nom de \textit{clustering}, et peut être réalisé au moyen de méthodes diverses et variées. Ici, c'est la méthode DBSCAN\footnote{\textit{Density-Based Spatial Clustering of Applications with Noise} est un algorithme utilisant la distance entre deux points et le nombre minimum de points choisis pour constituer un \textit{cluster} comme paramètres de segmentation automatique} qui a été choisie, par souci d'efficacité et de rapidité d'exécution.
 
-Rappelons que l'idée derrière le \textit{clustering} est de créer des groupes d'objets homogènes suffisamment denses pour contenir assez d'information, et suffisamment distincts pour que cette information soit correctement distribuée. DBSCAN fonctionne sur le principe suivant : $\epsilon$ est le rayon dans lequel doivent se trouver au moins $MinPts$ points ou plus pour que soit constituée un \textit{cluster}. Pour un nouveau point donné, l'algorithme vérifie par la suite que son $\epsilon$-voisinage contient au moins $MinPts$ points. Ce nouveau point appartient donc alors à un nouveau \textit{cluster}, et l'$\epsilon$-voisinage est parcouru de proche en proche afin de définir les limites de ce \textit{cluster}.
+Rappelons que l'idée derrière le \textit{clustering} est de créer des groupes d'objets homogènes suffisamment denses pour contenir assez d'information, et suffisamment distincts pour que cette information soit correctement distribuée. DBSCAN fonctionne sur le principe suivant : $r$ est le rayon dans lequel doivent se trouver au moins $MinPts$ points ou plus pour que soit constituée un \textit{cluster}. Pour un nouveau point donné, l'algorithme vérifie par la suite que son $r$-voisinage contient au moins $MinPts$ points. Ce nouveau point appartient donc alors à un nouveau \textit{cluster}, et l'$r$-voisinage est parcouru de proche en proche afin de définir les limites de ce \textit{cluster}.
 
-\subsection{Résultats et limitations de la méthode}
+\subsection{Résultats de \textit{clustering}}
 
-Une étape essentielle dans ce genre de travaux consiste à observer l'influence de la variation des paramètres des algorithmes que l'on utilise sur les résultats obtenus, c'est la \textit{sensitivity analysis}. Ici, les deux paramètres que l'on peut faire varier touchent directement à la taille des \textit{clusters} créés par DBSCAN, il s'agit du rayon $\epsilon$ et du nombre de points minimum $MinPoints$ les constituant.
+Une étape essentielle dans ce genre de travaux consiste à observer l'influence de la variation des paramètres des algorithmes que l'on utilise sur les résultats obtenus, c'est la \textit{sensitivity analysis}. Ici, les deux paramètres que l'on peut faire varier touchent directement à la taille des \textit{clusters} créés par DBSCAN, il s'agit du rayon $r$ et du nombre de points minimum $MinPoints$ les constituant.
 
-Dans les faits, nous avons obtenu des résultats significatifs et exploitables. Même si l'analyse aurait pu être poussée plus loin, nous nous satisfaisons pour l'instant des résultats que nous avons. On observe une claire variation du nombre de \textit{clusters} créés et de la proportion de points considérés comme du bruit\footnote{Donc pas intégrés à un \textit{cluster}} en fonction du rayon $\epsilon$ de \textit{clustering} utilisé (fig.~\ref{clustering})
+Dans les faits, nous avons obtenu des résultats significatifs et exploitables. Même si l'analyse aurait pu être poussée plus loin, nous nous satisfaisons pour l'instant des résultats que nous avons. On observe une claire variation du nombre de \textit{clusters} créés et de la proportion de points considérés comme du bruit\footnote{Donc pas intégrés à un \textit{cluster}} en fonction du rayon $r$ de \textit{clustering} utilisé (fig.~\ref{clustering})
 
 \begin{figure}[!h]
 	\center
-	\includegraphics[scale=0.1]{clustering.png}
-	\caption{Résultats de \textit{clustering} par DBSCAN selon différentes valeurs de $\epsilon$ et $MinPoints$}
+	\includegraphics[scale=0.21]{clustering.png}
+	\caption{Résultats de \textit{clustering} par DBSCAN selon différentes valeurs de $r$}
 	\label{clustering}
 \end{figure}
+
+Précisons d'emblée que chacune des quatre paires de graphes correspond à un \textit{clustering} réalisé sur un nombre croissant d'URL \texttt{Unique URL} en faisant varier le rayon $r$, $MinPoints$ étant maintenu constant égal à 4. Le graphe du haut rend compte de l'évolution du nombre de \textit{clusters} \texttt{N\_clusters} obtenu en fonction de $r$, le graphe du bas rend compte de la proportion d'URL considérées comme du bruit \textit{frac\_noise} en fonction de $r$. L'idéal serait d'obtenir assez de \textit{clusters} pour séparer efficacement les URL en segments sans toutefois maintenir trop d'URL à l'écart en les considérant comme du bruit.
+
+Ces résultats nous apprennent plusieurs choses. Tout d'abord, la combinaison du calcul de distance entre URL par la fonction de Levenshtein modifiée $d_{\text{LVS2}}$ et du \textit{clustering} par DBSCAN pourrait être adaptée au traitement de notre problématique. Reste à vérifier que les \textit{clusters} créés sur ces données d'entraînement rendent compte d'une certaine homogénéité et restent exploitables dans une optique de ciblage d'utilisateurs (qui reste l'objectif principal, rappelons-le à toutes fins utiles !). Nous y reviendrons.
+
+Ensuite, il semble exister une valeur de $r$ pour laquelle le nombre de \textit{clusters} obtenus est maximal. S'il s'avère que les URL sont correctement distribuées (i.e. si le contenu des \textit{clusters}) nous satisfait, alors on pourrait considérer cette valeur de $r$ comme optimale, dans la mesure où elle permet une segmentation efficace. Là encore, reste à vérifier le contenu des \textit{clusters}.
+
+Enfin, à l'instar de l'évolution du nombre de \textit{clusters}, il semble exister une valeur de $r$ pour laquelle la proportion d'URL considérées comme du bruit est acceptable, par exemple autour de $20$~\%. Reste à placer \texttt{N\_clusters} en regard de \texttt{frac\_noise} et à vérifier que ce \textit{clustering} est satisfaisant dans une optique de ciblage...
+
+\subsection{Limites de la méthode}
+
+Un écueil n'a cependant pu être évité lors de la réalisation de ces différents essais de \textit{clustering}. Le lecteur averti aura en effet remarqué que le temps d'exécution est fourni pour chaque calcul, et qu'il augmente de manière non linéaire avec le nombre d'URL traitées. Ainsi, si $521$ URL peuvent être passées à la moulinette en un peu plus de $15$ minutes, il faut près d'$1$~h pour en traiter le double ($521$ contre $1041$), et il faut presque $9$~h~$30$ pour réaliser un essai de \textit{clustering} sur $3123$ URL (!) 
+
+La conclusion de ces essais est sans appel : dans un optique de ciblage publicitaire, des centaines de milliers d'URL devront être traitées chaque jour, un temps de calcul aussi long que celui observé ici pour calibrer notre modèle n'est pas envisageable. Il faut donc s'orienter vers une méthode plus adaptée au traitement de grands volumes de données.
 
 \section{Approche sémantique de l'analyse des URL et segmentation automatique par la méthode des \textit{n}-grammes}
 
@@ -170,6 +184,8 @@ p(w_1, w_2, \dots, w_L|c_j) = \Pi_{i=1}^{L}p((w_i|w_{i-1}, w_{i-2}, \dots, w_{i-
 Le modèle $n$-gramme est donc la distribution de probabilité de chaque séquence de caractères de longueur $n$ basée sur l'ensemble des données d'entraînement disponibles. On dit alors que $p(w_1, w_2, \dots, w_L|c_j)$ est le \textit{le modèle $n$-gramme pour la classe $c_j$}.
 
 \subsection{Construction du modèle $n$-grammes à partir des données d'URL disponibles}
+
+
 
 \subsection{Résultats de segmentation d'URL}
 

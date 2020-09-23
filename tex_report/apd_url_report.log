@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.8)  23 SEP 2020 08:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.8)  23 SEP 2020 09:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -504,7 +504,7 @@ ame{page.1}) has been already used, duplicate ignored
 l.60 	\item l
              e protocole internet permettant d'y accéder\footnote{Les proto...
 [1]
-<pattern_tree.png, id=108, 499.8675pt x 187.70125pt>
+<pattern_tree.png, id=112, 499.8675pt x 187.70125pt>
 File: pattern_tree.png Graphic file (type png)
 <use pattern_tree.png>
 Package pdftex.def Info: pattern_tree.png  used on input line 89.
@@ -514,48 +514,47 @@ Package pdftex.def Info: pattern_tree.png  used on input line 89.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [2] [3 <./pattern_tree.png>] [4]
-<clu_0.png, id=152, 847.165pt x 1047.915pt>
-File: clu_0.png Graphic file (type png)
-<use clu_0.png>
-Package pdftex.def Info: clu_0.png  used on input line 141.
-(pdftex.def)             Requested size: 169.43pt x 209.57928pt.
+<clustering.png, id=156, 1707.37875pt x 2133.9725pt>
+File: clustering.png Graphic file (type png)
+<use clustering.png>
+Package pdftex.def Info: clustering.png  used on input line 141.
+(pdftex.def)             Requested size: 358.56012pt x 448.14746pt.
+ [5 <./clustering.png>] [6]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 164.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 150.
+(hyperref)                removing `math shift' on input line 164.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 150.
-
-[5 <./clu_0.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 172.
+(hyperref)                removing `math shift' on input line 186.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 172.
+(hyperref)                removing `math shift' on input line 186.
 
-[6] (./apd_url_report.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 181.
- [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 181.
+[7] (./apd_url_report.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
+ [8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
  (./apd_url_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 181.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 181.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 195.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 195.
 Package rerunfilecheck Info: File `apd_url_report.out' has not changed.
-(rerunfilecheck)             Checksum: 29321C90A9C83688CB932FFCD3038C75;1344.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 181.
+(rerunfilecheck)             Checksum: 83444671CB1FB5881A4821987A704B60;1400.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
  ) 
 Here is how much of TeX's memory you used:
- 8061 strings out of 492616
- 117211 string characters out of 6129481
- 231790 words of memory out of 5000000
- 11825 multiletter control sequences out of 15000+600000
+ 8065 strings out of 492616
+ 117290 string characters out of 6129481
+ 231775 words of memory out of 5000000
+ 11827 multiletter control sequences out of 15000+600000
  16247 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,19n,31p,770b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,19n,31p,752b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -581,10 +580,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2019/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on apd_url_report.pdf (9 pages, 428143 bytes).
+Output written on apd_url_report.pdf (10 pages, 659364 bytes).
 PDF statistics:
- 264 PDF objects out of 1000 (max. 8388607)
- 222 compressed objects within 3 object streams
- 36 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 276 PDF objects out of 1000 (max. 8388607)
+ 232 compressed objects within 3 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 139 words of extra memory for PDF output out of 10000 (max. 10000000)
 
