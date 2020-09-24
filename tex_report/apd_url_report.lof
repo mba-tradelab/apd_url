@@ -1,3 +1,8 @@
 \babel@toc {french}{}
 \contentsline {figure}{\numberline {1}{\ignorespaces Exemple de \textit {pattern tree} construit \IeC {\`a} partir du site \texttt {www.wretch.cc}}}{3}{figure.1}% 
 \contentsline {figure}{\numberline {2}{\ignorespaces R\IeC {\'e}sultats de \textit {clustering} par DBSCAN selon diff\IeC {\'e}rentes valeurs de $r$}}{5}{figure.2}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Comparaison des temps de calcul entre fonction brute (en bas) et fonction pr\IeC {\'e}compil\IeC {\'e}e (en haut)}}{7}{figure.3}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces R\IeC {\'e}sultats de \textit {clustering} par DBSCAN selon diff\IeC {\'e}rentes valeurs de $r$ apr\IeC {\`e}s utilisation de la biblioth\IeC {\`e}que \texttt {Polyleven}}}{8}{figure.4}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Distribution des URL des donn\IeC {\'e}es au sein des diff\IeC {\'e}rentes classes. Les classes sont rep\IeC {\'e}r\IeC {\'e}es par leur identifiant, reli\IeC {\'e} ensuite \IeC {\`a} leur nom gr\IeC {\^a}ce \IeC {\`a} une table de correspondance}}{10}{figure.5}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Distribution des URL des donn\IeC {\'e}es d'entra\IeC {\^\i }nement au sein des diff\IeC {\'e}rentes classes}}{11}{figure.6}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Distribution des URL des donn\IeC {\'e}es de test au sein des diff\IeC {\'e}rentes classes}}{11}{figure.7}% 

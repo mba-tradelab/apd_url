@@ -134,7 +134,7 @@ Rappelons que l'idée derrière le \textit{clustering} est de créer des groupes
 
 Une étape essentielle dans ce genre de travaux consiste à observer l'influence de la variation des paramètres des algorithmes que l'on utilise sur les résultats obtenus, c'est la \textit{sensitivity analysis}. Ici, les deux paramètres que l'on peut faire varier touchent directement à la taille des \textit{clusters} créés par DBSCAN, il s'agit du rayon $r$ et du nombre de points minimum $MinPoints$ les constituant.
 
-Dans les faits, nous avons obtenu des résultats significatifs et exploitables. Même si l'analyse aurait pu être poussée plus loin, nous nous satisfaisons pour l'instant des résultats que nous avons. On observe une claire variation du nombre de \textit{clusters} créés et de la proportion de points considérés comme du bruit\footnote{Donc pas intégrés à un \textit{cluster}} en fonction du rayon $r$ de \textit{clustering} utilisé (fig.~\ref{clustering})
+Dans les faits, nous avons obtenu des résultats significatifs et exploitables. Même si l'analyse aurait pu être poussée plus loin, nous nous satisfaisons pour l'instant des résultats que nous avons. On observe une claire variation du nombre de \textit{clusters} créés et de la proportion de points considérés comme du bruit\footnote{Donc pas intégrés à un \textit{cluster}} en fonction du rayon $r$ de \textit{clustering} utilisé (fig.~\ref{clustering}).
 
 \begin{figure}[!h]
 	\center
@@ -157,6 +157,29 @@ Un écueil n'a cependant pu être évité lors de la réalisation de ces différ
 
 La conclusion de ces essais est sans appel : dans un optique de ciblage publicitaire, des centaines de milliers d'URL devront être traitées chaque jour, un temps de calcul aussi long que celui observé ici pour calibrer notre modèle n'est pas envisageable. Il faut donc s'orienter vers une méthode plus adaptée au traitement de grands volumes de données.
 
+\subsection{Optimisations possibles}
+
+D'une façon générale, une utilisation abusive de la bibliothèque \texttt{Pandas} entraîne une diminution des performances des algorithmes lorsqu'on cherche à effectuer ce genre de tâches. Ce point de départ constitue une première orientation pour réécrire un peu le code, mais ce n'est pas tout.
+
+Plusieurs solutions s'offrent à nous, comme se tourner vers le module \texttt{distance} de la bibliothèque \texttt{scipy} (codée en \texttt{C}) plutôt que de coder le calcul des distances en \texttt{Python} brut ; utiliser préférentiellement \texttt{numpy}, plus adapté aux calculs matriciels dont nous avons fait grand usage ici ; et précompiler les fonctions de calculs de distances en \texttt{Jit}. Un premier exemple des différences de temps de calcul entre une fonction codée en \texttt{Python} et une fonction précompilée en \texttt{Jit} est obtenu sur $10$ URL, le résultat est stupéfiant (fig.~\ref{times}).
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[scale=0.5]{times.png}
+	\caption{Comparaison des temps de calcul entre fonction brute (en bas) et fonction précompilée (en haut)}
+	\label{times}
+\end{figure}
+
+Pour aller plus loin, nous avons essayé la bibliothèque \texttt{Polyleven}\footnote{http://ceptord.net/20181215-polyleven.html}. Les gains en termes de temps d'exécution ne laissent aucune place à la comparaison... (fig.~\ref{polyleven}).
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[scale=2.1]{polyleven.png}
+	\caption{Résultats de \textit{clustering} par DBSCAN selon différentes valeurs de $r$ après utilisation de la bibliothèque \texttt{Polyleven}}
+	\label{polyleven}
+\end{figure}
+
+\newpage
 \section{Approche sémantique de l'analyse des URL et segmentation automatique par la méthode des \textit{n}-grammes}
 
 La dernière approche a fait appel à un concept développé pour le traitement de problématiques liées à la théorie de l'information. Ici, l'idée est de classer automatiquement les URL (de créer des segments) sans avoir à les décortiquer ou à les diviser en leurs caractères constitutifs. Le modèle $n$-grammes s'est révélé plutôt bien adapté.
@@ -185,9 +208,72 @@ Le modèle $n$-gramme est donc la distribution de probabilité de chaque séquen
 
 \subsection{Construction du modèle $n$-grammes à partir des données d'URL disponibles}
 
+Le principe de construction du modèle repose sur l'utilisation de segments déjà créés par l'équipe Data Analyse. Ces segments d'URL ont été créés manuellement à l'aide de règles syntaxiques simples comme \textit{l'URL comporte les termes "voiture" et "luxe"}. D'une certaine façon, nous disposons déjà de segments d'URL qui peuvent servir de données d'entraînement. 
 
+\subsubsection{Entraînement}
+L'objectif est de construire un modèle $n$-gramme pour chaque segment d'URL, qui correspondent en réalité aux classes au sein desquelles il faudra classer toute nouvelle URL automatiquement par la suite. Pour chaque classe dans les données d'entraînement, les probabilités décrites plus haut sont calculées en comptant le nombre d'occurrences de chaque séquence de longueur $n$ et de longueur $n-1$ parmi les URL constituant la classe. Par exemple, imaginons qu'une des classes (rappelons qu'il s'agit des segments manuellement créés par l'équipe Data Analyse dont nous disposons) soit constituée par $c_j = \{\text{'ABCDE'}, \text{'ABC'}, \text{'CDE'}\}$ ; pour construire un modèle $3$-grammes sur cette classe, on s'intéresse aux séquences de caractères de longueur $3$ et de longueur $2$ et à leurs occurrences : 
 
-\subsection{Résultats de segmentation d'URL}
+3-grammes : ($\text{'ABC'}$: 2 $\text{occurrences}$), ($\text{'BCD'}$: 1 $\text{occurrences}$), ($\text{'CDE'}$: 2 $\text{occurrences}$)
+
+2-grammes : ($\text{'AB'}$: 2 $\text{occurrences}$), ($\text{'BC'}$: 1 $\text{occurrences}$), ($\text{'CD'}$: 2 $\text{occurrences}$), ($\text{'DE'}$: 2 $\text{occurrences}$)
+
+\subsubsection{Test}
+
+Le décompte d'occurrences pour chaque séquence constituait la phase d'entraînement des modèles. La phase de test consiste à :
+
+\begin{itemize}
+	\item convertir chaque URL en $n$-grammes
+	\item pour chaque $n$-gramme, calculer sa probabilité d'occurrence dans cette classe
+	
+	$p((w_i|w_{i-n+1}^{i-1})|c_j) = \frac{count(w_{i-n+1}^{i})}{count(w_{i-n+1}^{i-1})}$
+\end{itemize}
+
+Chaque nouvelle URL $URL_i$ est ensuite classée comme partie de la classe $c_j$ si et seulement si le modèle $n$-grammes de cette classe renvoie la valeur maximale de $p(c_j|URL_i)$.
+
+\subsection{Segmentation d'URL}
+
+\subsubsection{Analyse exploratoire - Distribution des URL}
+
+L'analyse des données à disposition montre que l'on possède (pour les tests réalisés en juillet 2020) $18623$ URL uniques réparties de façon très hétérogène en $25$ classes (fig.~\ref{distribution}).
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[scale=0.29]{distribution}
+	\caption{Distribution des URL des données au sein des différentes classes. Les classes sont repérées par leur identifiant, relié ensuite à leur nom grâce à une table de correspondance}
+	\label{distribution}
+\end{figure}
+
+\subsubsection{Construction des jeux d'entraînement et de test}
+
+Les données disponibles sont séparées en un jeu d'entraînement, qui sert à construire les modèles $n$-grammes, et un jeu de test, conservé à l'écart dans un premier temps. Ce jeu de test servira, une fois les modèles construits, à vérifier leur pertinence et la reproductibilité des résultats.
+
+Le jeu d'entraînement est constitué par 66~\% des données disponibles, échantillonnées aléatoirement. Le jeu de test est constitué par les 33~\% des données restantes\footnote{Cette distribution 2/3-1/3 entre entraînement est test résulte d'une convention généralement suivie lorsqu'on segmente un jeu de données pour construire un modèle et le tester. Pour aller plus loin, on peut ajouter une partie servant à la validation, selon une partition 60~\%, 20~\%, 20~\% entre entraînement, validation et test, mais nous n'en avons pas fait usage ici}. 
+
+Les données d'entraînement comportent donc $12477$ URL distribuées en $25$ classes (sans surprise). Les données de test comportent $6146$ distribuées en $25$ classes (figs.~\ref{distribution_train}~et~\ref{distribution_test}).
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[scale=0.29]{distribution_train.png}
+	\caption{Distribution des URL des données d'entraînement au sein des différentes classes}
+	\label{distribution_train}
+\end{figure}
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[scale=0.29]{distribution_test.png}
+	\caption{Distribution des URL des données de test au sein des différentes classes}
+	\label{distribution_test}
+\end{figure}
+
+Il est essentiel d'observer que l'on conserve bien l'ensemble des classes des données initiales dans les deux jeux de données construits ; et là encore, de nombreuses améliorations sont possibles, comme par exemple s'assurer au moyen de tests statistiques que la distribution des URL dans les classes est identique au sein des données d'entraînement et de test. Ici, nous nous sommes contentés d'une observation des diagrammes de distribution dans chaque jeu de données...
+
+\subsubsection{Implémentation du modèle $n$-grammes}
+
+L'implémentation du modèle $n$-grammes pour la segmentation automatique d'URL a fait appel à certains modules de la bibliothèque Python (dont le code a été légèrement revu) \texttt{irlib}\footnote{https://github.com/gr33ndata/irlib} développée par Tarek Amr Abdallah.
+
+Comme pour de nombreux projets informatiques d'apprentissage statistique, les étapes à suivre une fois les données d'entraînement et de test construites consistent principalement en la définition d'un modèle dont les paramètres sont renseignés par l'utilisateur et appelés à être affinés selon les résultats obtenus en phase de test (ou de validation).
+
+\subsection{Premiers résultats de segmentation}
 
 \newpage
 \addcontentsline{toc}{section}{References}

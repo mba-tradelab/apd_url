@@ -10,8 +10,15 @@
 \contentsline {subsection}{\numberline {4.2}DBSCAN et segmentation}{4}{subsection.4.2}% 
 \contentsline {subsection}{\numberline {4.3}R\IeC {\'e}sultats de \textit {clustering}}{4}{subsection.4.3}% 
 \contentsline {subsection}{\numberline {4.4}Limites de la m\IeC {\'e}thode}{6}{subsection.4.4}% 
-\contentsline {section}{\numberline {5}Approche s\IeC {\'e}mantique de l'analyse des URL et segmentation automatique par la m\IeC {\'e}thode des \textit {n}-grammes}{6}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Le mod\IeC {\`e}le $n$-grammes}{7}{subsection.5.1}% 
-\contentsline {subsection}{\numberline {5.2}Construction du mod\IeC {\`e}le $n$-grammes \IeC {\`a} partir des donn\IeC {\'e}es d'URL disponibles}{7}{subsection.5.2}% 
-\contentsline {subsection}{\numberline {5.3}R\IeC {\'e}sultats de segmentation d'URL}{7}{subsection.5.3}% 
-\contentsline {section}{References}{8}{subsection.5.3}% 
+\contentsline {subsection}{\numberline {4.5}Optimisations possibles}{6}{subsection.4.5}% 
+\contentsline {section}{\numberline {5}Approche s\IeC {\'e}mantique de l'analyse des URL et segmentation automatique par la m\IeC {\'e}thode des \textit {n}-grammes}{8}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Le mod\IeC {\`e}le $n$-grammes}{8}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Construction du mod\IeC {\`e}le $n$-grammes \IeC {\`a} partir des donn\IeC {\'e}es d'URL disponibles}{9}{subsection.5.2}% 
+\contentsline {subsubsection}{\numberline {5.2.1}Entra\IeC {\^\i }nement}{9}{subsubsection.5.2.1}% 
+\contentsline {subsubsection}{\numberline {5.2.2}Test}{10}{subsubsection.5.2.2}% 
+\contentsline {subsection}{\numberline {5.3}Segmentation d'URL}{10}{subsection.5.3}% 
+\contentsline {subsubsection}{\numberline {5.3.1}Analyse exploratoire - Distribution des URL}{10}{subsubsection.5.3.1}% 
+\contentsline {subsubsection}{\numberline {5.3.2}Construction des jeux d'entra\IeC {\^\i }nement et de test}{10}{subsubsection.5.3.2}% 
+\contentsline {subsubsection}{\numberline {5.3.3}Impl\IeC {\'e}mentation du mod\IeC {\`e}le $n$-grammes}{12}{subsubsection.5.3.3}% 
+\contentsline {subsection}{\numberline {5.4}Premiers r\IeC {\'e}sultats de segmentation}{12}{subsection.5.4}% 
+\contentsline {section}{References}{13}{subsection.5.4}% 
