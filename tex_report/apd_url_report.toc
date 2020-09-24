@@ -21,4 +21,7 @@
 \contentsline {subsubsection}{\numberline {5.3.2}Construction des jeux d'entra\IeC {\^\i }nement et de test}{10}{subsubsection.5.3.2}% 
 \contentsline {subsubsection}{\numberline {5.3.3}Impl\IeC {\'e}mentation du mod\IeC {\`e}le $n$-grammes}{12}{subsubsection.5.3.3}% 
 \contentsline {subsection}{\numberline {5.4}Premiers r\IeC {\'e}sultats de segmentation}{12}{subsection.5.4}% 
-\contentsline {section}{References}{13}{subsection.5.4}% 
+\contentsline {subsubsection}{\numberline {5.4.1}Evaluer les r\IeC {\'e}sultats d'un algorithme de classification}{12}{subsubsection.5.4.1}% 
+\contentsline {subsubsection}{\numberline {5.4.2}R\IeC {\'e}sultats de segmentation}{13}{subsubsection.5.4.2}% 
+\contentsline {section}{\numberline {6}Conclusion}{14}{section.6}% 
+\contentsline {section}{References}{15}{section.6}% 

@@ -28,7 +28,8 @@
 
 \newpage
 \tableofcontents
-\listoftables
+\thispagestyle{empty}
+\newpage
 \listoffigures
 \thispagestyle{empty}
 
@@ -274,6 +275,67 @@ L'implémentation du modèle $n$-grammes pour la segmentation automatique d'URL 
 Comme pour de nombreux projets informatiques d'apprentissage statistique, les étapes à suivre une fois les données d'entraînement et de test construites consistent principalement en la définition d'un modèle dont les paramètres sont renseignés par l'utilisateur et appelés à être affinés selon les résultats obtenus en phase de test (ou de validation).
 
 \subsection{Premiers résultats de segmentation}
+
+Par souci de rapidité, la segmentation proprement dite a dû être réalisée sur un échantillon initial de 1000 URL. L'échantillon a été divisé en données d'entraînement et de test, les distributions des URL dans chacun des groupes restant constantes et identiques à celles présentées en figures~\ref{distribution_train} et~\ref{distribution_test}.
+
+\subsubsection{Evaluer les résultats d'un algorithme de classification}
+
+D'une manière générale, on peut décrire l'évaluation d'un modèle de classification comme l'état des lieux après qu'une décision cruciale a été prise, en gardant à l'esprit les conséquences qu'une éventuelle erreur pourrait avoir. Un exemple classiquement utilisé consiste à décrire la situation d'un médecin se trouvant face aux résultats d'une analyse et devant décider, en le confrontant à ses connaissances et son expérience, si ce résultat est représentatif de la présence d'une tumeur ou non. 
+Plusieurs cas de figure se présentent alors :
+
+\begin{itemize}
+	\item le diagnostic et la réalité concordent : le patient est atteint d'une tumeur. On se trouve dans le cas d'un \underline{vrai positif} (TP en anglais)
+	\item le diagnostic et la réalité concordent : le patient n'est pas atteint d'une tumeur. On se retrouve dans le cas d'un \underline{vrai négatif} (TN en anglais)
+	\item le diagnostic et la réalité diffèrent : le patient est atteint d'une tumeur mais le médecin avait annoncé le contraire. On se trouve dans le cas d'un \underline{faux négatif}\footnote{Il va sans dire qu'un faux négatif peut avoir des conséquences bien plus dramatiques qu'un faux positif, aussi bien en médecine qu'en apprentissage statistique !} (FN en anglais)
+	\item le diagnostic et la réalité diffèrent : le patient n'est pas atteint d'une tumeur mais le médecin avait annoncé que si. On se trouve dans le cas d'un \underline{faux positif} (FP en anglais)
+\end{itemize}
+
+D'autres métriques d'évaluation ont été introduites puisque l'on se place ici dans le cadre un peu plus complexe d'une classification multi-classes. En effet, chaque URL peut être assignée à une classe parmi plus de deux choix. 
+
+Pour introduire ces manières d'évaluer les résultats, nous avons en gros utilisé une forme dérivée du classique $F_1$-score ramenant le nombre de vrais positifs au nombre de positifs total. L'idée est de considérer chaque classe individuellement pour calculer un score $F_{micro}$, puis de repasser à l'échelle globale en considérant l'ensemble des classes pour calculer un score $F_{macro}$, ou $F$. On se rapporte ainsi à une situation analogue à celle où il faudrait évaluer la classification d'un modèle binaire.
+
+Le $F$-score est défini par
+
+\[
+F = \frac{(\beta^2 + 1)PR}{\beta^2P+R}
+\]
+
+$\beta$ est en général choisi égal à $1$.
+
+Il vient pour chaque classe de taille $|C|$ les valeurs de $P_{micro}$ et $R_{micro}$
+
+\[
+P_{micro} = \frac{\sum_{i=1}^{|C|}TP_i}{\sum_{i=1}^{|C|}TP_i+FP_i}, R_{micro} = \frac{\sum_{i=1}^{|C|}TP_i}{\sum_{i=1}^{|C|}TP_i+FN_i}
+\]
+
+et les valeurs de $P_{macro}$ et $R_{macro}$
+
+\[
+P_{macro} = \frac{1}{|C|}\sum_{i=1}^{|C|}\frac{TP_i}{TP_i+FP_i}, R_{macro} = \frac{1}{|C|}\sum_{i=1}^{|C|}\frac{TP_i}{TP_i+FN_i}
+\]
+
+\subsubsection{Résultats de segmentation}
+
+Les résultats présentés ont été obtenus en construisant un modèle $3$-grammes pour chaque classe d'URL initialement à notre disposition, appliqué sur un ensemble de $1000$ URL divisé en ensemble d'entraînement et ensemble de test selon une répartition $\frac{2}{3}$ / $\frac{1}{3}$.
+
+Il est évident que ces résultats peuvent être améliorés. Leur valeur brute n'apporte en effet aucune information réellement pertinente au lecteur (fig.~\ref{results}).
+
+\begin{figure}[!h]
+	\center
+	\includegraphics[scale=0.29]{results.png}
+	\caption{Résultats $TP$, $TN$, $FP$, $FN$, $P_{macro}$, $R_{macro}$, $P_{micro}$, $R_{micro}$ obtenus sur un échantillon de 1000 URL}
+	\label{results}
+\end{figure}
+
+\section{Conclusion}
+
+Tout d'abord il est essentiel de rappeler que l'intérêt d'un tel travail était de vérifier l'existence d'une méthode efficace, rapide, reproductible et applicable à un large de volume de données dans le cadre de la segmentation automatique d'URL reçues quotidiennement par Jellyfish France.
+
+Plusieurs méthodes de traitement de la structure des URL ont été approchées, décrites et testées. Certaines d'entre elles, bien qu'efficaces sur des petits ensembles de données, se révèlent peu adaptées à de trop larges volumes, alors que d'autres, qui semblent offrir des résultats moins exceptionnels \textit{a priori}, se montrent assez robustes sur des ensembles importants d'URL.
+
+L'approche statistique du traitement des URL était la plus basique, et l'approche par traitement naturel du langage (NLP en anglais) par modèles $n$-grammes la plus complexe. C'est cette dernière que j'ai trouvée la plus riche d'enseignements, tant sur l'aspect théorique informatique et mathématique, que sur l'aspect de mise en place des modèles en Python. 
+
+Il pourrait être intéressant de pousser un peu plus loin les investigations, en déployant un véritable environnement de validation et de test de modèles, jour après jour, sur les URL reçues. Une application à plus grande échelle constituerait également un défi certain, et je pense à des outils comme Spark, déjà utilisés chez Jellyfish France et efficaces dans ce genre de contexte.
 
 \newpage
 \addcontentsline{toc}{section}{References}

@@ -20,4 +20,7 @@
 \BOOKMARK [3][-]{subsubsection.5.3.2}{Construction des jeux d'entra\356nement et de test}{subsection.5.3}% 20
 \BOOKMARK [3][-]{subsubsection.5.3.3}{Impl\351mentation du mod\350le n-grammes}{subsection.5.3}% 21
 \BOOKMARK [2][-]{subsection.5.4}{Premiers r\351sultats de segmentation}{section.5}% 22
-\BOOKMARK [1][-]{subsection.5.4}{References}{}% 23
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Evaluer les r\351sultats d'un algorithme de classification}{subsection.5.4}% 23
+\BOOKMARK [3][-]{subsubsection.5.4.2}{R\351sultats de segmentation}{subsection.5.4}% 24
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 25
+\BOOKMARK [1][-]{section.6}{References}{}% 26

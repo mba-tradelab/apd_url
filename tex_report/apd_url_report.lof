@@ -6,3 +6,4 @@
 \contentsline {figure}{\numberline {5}{\ignorespaces Distribution des URL des donn\IeC {\'e}es au sein des diff\IeC {\'e}rentes classes. Les classes sont rep\IeC {\'e}r\IeC {\'e}es par leur identifiant, reli\IeC {\'e} ensuite \IeC {\`a} leur nom gr\IeC {\^a}ce \IeC {\`a} une table de correspondance}}{10}{figure.5}% 
 \contentsline {figure}{\numberline {6}{\ignorespaces Distribution des URL des donn\IeC {\'e}es d'entra\IeC {\^\i }nement au sein des diff\IeC {\'e}rentes classes}}{11}{figure.6}% 
 \contentsline {figure}{\numberline {7}{\ignorespaces Distribution des URL des donn\IeC {\'e}es de test au sein des diff\IeC {\'e}rentes classes}}{11}{figure.7}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces R\IeC {\'e}sultats $TP$, $TN$, $FP$, $FN$, $P_{macro}$, $R_{macro}$, $P_{micro}$, $R_{micro}$ obtenus sur un \IeC {\'e}chantillon de 1000 URL}}{13}{figure.8}% 

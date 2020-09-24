@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.8)  24 SEP 2020 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.8)  24 SEP 2020 21:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -483,31 +483,26 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write4
 \openout4 = `apd_url_report.toc'.
 
-
-(./apd_url_report.lot)
-\tf@lot=\write5
-\openout5 = `apd_url_report.lot'.
-
- (./apd_url_report.lofpdfTeX warning (ext4): destination with the same identifi
-er (name{page.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7 ...iff\IeC {\'e}rentes classes}}{11}{figure.6}
-                                                  % [1])
-\tf@lof=\write6
-\openout6 = `apd_url_report.lof'.
+l.32 \newpage
+              [1] (./apd_url_report.lof)
+\tf@lof=\write5
+\openout5 = `apd_url_report.lof'.
 
  [2]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.60 	\item l
+l.61 	\item l
              e protocole internet permettant d'y accéder\footnote{Les proto...
 [1]
-<pattern_tree.png, id=161, 499.8675pt x 187.70125pt>
+<pattern_tree.png, id=186, 499.8675pt x 187.70125pt>
 File: pattern_tree.png Graphic file (type png)
 <use pattern_tree.png>
-Package pdftex.def Info: pattern_tree.png  used on input line 89.
+Package pdftex.def Info: pattern_tree.png  used on input line 90.
 (pdftex.def)             Requested size: 299.9228pt x 112.62161pt.
 
 
@@ -517,23 +512,23 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.97 
+l.98 
       [2] [3 <./pattern_tree.png>] [4]
-<clustering.png, id=206, 1707.37875pt x 2133.9725pt>
+<clustering.png, id=230, 1707.37875pt x 2133.9725pt>
 File: clustering.png Graphic file (type png)
 <use clustering.png>
-Package pdftex.def Info: clustering.png  used on input line 141.
+Package pdftex.def Info: clustering.png  used on input line 142.
 (pdftex.def)             Requested size: 358.56012pt x 448.14746pt.
  [5 <./clustering.png>] [6]
-<times.png, id=218, 513.92pt x 406.51875pt>
+<times.png, id=242, 513.92pt x 406.51875pt>
 File: times.png Graphic file (type png)
 <use times.png>
-Package pdftex.def Info: times.png  used on input line 168.
+Package pdftex.def Info: times.png  used on input line 169.
 (pdftex.def)             Requested size: 256.95937pt x 203.25887pt.
-<polyleven.png, id=221, 193.9245pt x 122.859pt>
+<polyleven.png, id=245, 193.9245pt x 122.859pt>
 File: polyleven.png Graphic file (type png)
 <use polyleven.png>
-Package pdftex.def Info: polyleven.png  used on input line 177.
+Package pdftex.def Info: polyleven.png  used on input line 178.
 (pdftex.def)             Requested size: 407.2416pt x 258.00395pt.
 
 
@@ -542,107 +537,108 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [7 <./times.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 187.
+(hyperref)                removing `math shift' on input line 188.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 187.
+(hyperref)                removing `math shift' on input line 188.
 
 [8 <./polyleven.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 209.
+(hyperref)                removing `math shift' on input line 210.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 209.
+(hyperref)                removing `math shift' on input line 210.
 
 [9]
-<distribution.png, id=244, 1413.28pt x 582.175pt>
+<distribution.png, id=267, 1413.28pt x 582.175pt>
 File: distribution.png Graphic file (type png)
 <use distribution.png>
-Package pdftex.def Info: distribution.png  used on input line 241.
+Package pdftex.def Info: distribution.png  used on input line 242.
 (pdftex.def)             Requested size: 409.84071pt x 168.82642pt.
  [10 <./distribution.png>]
-Overfull \hbox (1.352pt too wide) in paragraph at lines 252--253
+Overfull \hbox (1.352pt too wide) in paragraph at lines 253--254
 \OT1/cmr/m/n/10.95 (sans sur-prise). Les donn^^Sees de test com-portent $6146$ 
 dis-tribu^^Sees en $25$ classes (figs. []6[] et []7[]). 
  []
 
-<distribution_train.png, id=254, 1413.28pt x 582.175pt>
+<distribution_train.png, id=277, 1413.28pt x 582.175pt>
 File: distribution_train.png Graphic file (type png)
 <use distribution_train.png>
-Package pdftex.def Info: distribution_train.png  used on input line 256.
+Package pdftex.def Info: distribution_train.png  used on input line 257.
 (pdftex.def)             Requested size: 409.84071pt x 168.82642pt.
-<distribution_test.png, id=255, 1406.25375pt x 582.175pt>
+<distribution_test.png, id=278, 1406.25375pt x 582.175pt>
 File: distribution_test.png Graphic file (type png)
 <use distribution_test.png>
-Package pdftex.def Info: distribution_test.png  used on input line 263.
+Package pdftex.def Info: distribution_test.png  used on input line 264.
 (pdftex.def)             Requested size: 407.80315pt x 168.82642pt.
 [11 <./distribution_train.png> <./distribution_test.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 270.
+(hyperref)                removing `math shift' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 270.
+(hyperref)                removing `math shift' on input line 271.
 
-[12] (./apd_url_report.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
- [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
- (./apd_url_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
+[12]
+<results.png, id=298, 297.2706pt x 209.583pt>
+File: results.png Graphic file (type png)
+<use results.png>
+Package pdftex.def Info: results.png  used on input line 325.
+(pdftex.def)             Requested size: 86.20625pt x 60.7775pt.
+ [13 <./results.png>] [14] (./apd_url_report.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 345.
+ [15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 345.
 
-
-Package rerunfilecheck Warning: File `apd_url_report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `apd_url_report.out':
-(rerunfilecheck)             Before: 1AF8460D959791957DD44A8DF896E1AE;1899
-(rerunfilecheck)             After:  8B62FA51AB8D10AC2CF241748EC00BED;1996.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 283.
+(./apd_url_report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 345.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 345.
+Package rerunfilecheck Info: File `apd_url_report.out' has not changed.
+(rerunfilecheck)             Checksum: 999A6A7D311D712A66E44A0BD64334E2;2243.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 345.
  ) 
 Here is how much of TeX's memory you used:
- 8122 strings out of 492616
- 118227 string characters out of 6129481
- 232447 words of memory out of 5000000
- 11860 multiletter control sequences out of 15000+600000
+ 8136 strings out of 492616
+ 118425 string characters out of 6129481
+ 233595 words of memory out of 5000000
+ 11869 multiletter control sequences out of 15000+600000
  16247 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,19n,31p,874b,632s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,19n,31p,874b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.
-pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
-fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
-b></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb>
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
-usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
-r/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
-local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
-19/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
-9/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2019/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2019/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on apd_url_report.pdf (16 pages, 882477 bytes).
+></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.p
+fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
+/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2019/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on apd_url_report.pdf (18 pages, 948584 bytes).
 PDF statistics:
- 370 PDF objects out of 1000 (max. 8388607)
- 310 compressed objects within 4 object streams
- 58 named destinations out of 1000 (max. 500000)
- 212 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 412 PDF objects out of 1000 (max. 8388607)
+ 347 compressed objects within 4 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 249 words of extra memory for PDF output out of 10000 (max. 10000000)
 
